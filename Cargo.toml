@@ -1,0 +1,16 @@
+[package]
+name = "sim_rust_rv32i"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+# ref: https://github.com/johnthagen/min-sized-rust
+[profile.release]
+opt-level = "z"  # Optimize for size.
+strip = true  # Automatically strip symbols from the binary.
+lto = true
+codegen-units = 1
+panic = "abort"
